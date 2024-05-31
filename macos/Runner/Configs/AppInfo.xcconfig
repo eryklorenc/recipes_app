@@ -8,7 +8,7 @@
 PRODUCT_NAME = recipes_app
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.recipesApp
+PRODUCT_BUNDLE_IDENTIFIER = com.eryklorenc.recipesApp
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 com.eryklorenc. All rights reserved.
