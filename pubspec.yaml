@@ -16,6 +16,10 @@ dependencies:
   get_it: ^7.7.0
   json_annotation: ^4.9.0
   injectable: ^2.4.2
+  intl: ^0.18.1
+
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -31,3 +35,4 @@ flutter:
 
 assets:
      - assets/
+     - lib/l10n/intl_en.arb

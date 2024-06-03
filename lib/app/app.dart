@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:recipes_app/app/core/theme/app_colors.dart';
 import 'package:recipes_app/app/core/theme/app_text_theme_extension.dart';
 import 'package:recipes_app/features/home/home_page.dart';
+import 'package:recipes_app/generated/l10n.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,6 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      supportedLocales: S.delegate.supportedLocales,
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.deepPurple),
         useMaterial3: true,
