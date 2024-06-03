@@ -22,6 +22,8 @@ RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) {
 mixin _$RecipeModel {
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  int get cookTimeMinutes => throw _privateConstructorUsedError;
+  double get rating => throw _privateConstructorUsedError;
   List<String> get ingredients => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
 
@@ -37,7 +39,13 @@ abstract class $RecipeModelCopyWith<$Res> {
           RecipeModel value, $Res Function(RecipeModel) then) =
       _$RecipeModelCopyWithImpl<$Res, RecipeModel>;
   @useResult
-  $Res call({int id, String name, List<String> ingredients, String image});
+  $Res call(
+      {int id,
+      String name,
+      int cookTimeMinutes,
+      double rating,
+      List<String> ingredients,
+      String image});
 }
 
 /// @nodoc
@@ -55,6 +63,8 @@ class _$RecipeModelCopyWithImpl<$Res, $Val extends RecipeModel>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? cookTimeMinutes = null,
+    Object? rating = null,
     Object? ingredients = null,
     Object? image = null,
   }) {
@@ -67,6 +77,14 @@ class _$RecipeModelCopyWithImpl<$Res, $Val extends RecipeModel>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      cookTimeMinutes: null == cookTimeMinutes
+          ? _value.cookTimeMinutes
+          : cookTimeMinutes // ignore: cast_nullable_to_non_nullable
+              as int,
+      rating: null == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as double,
       ingredients: null == ingredients
           ? _value.ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
@@ -87,7 +105,13 @@ abstract class _$$RecipeModelImplCopyWith<$Res>
       __$$RecipeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String name, List<String> ingredients, String image});
+  $Res call(
+      {int id,
+      String name,
+      int cookTimeMinutes,
+      double rating,
+      List<String> ingredients,
+      String image});
 }
 
 /// @nodoc
@@ -103,6 +127,8 @@ class __$$RecipeModelImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? cookTimeMinutes = null,
+    Object? rating = null,
     Object? ingredients = null,
     Object? image = null,
   }) {
@@ -115,6 +141,14 @@ class __$$RecipeModelImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      cookTimeMinutes: null == cookTimeMinutes
+          ? _value.cookTimeMinutes
+          : cookTimeMinutes // ignore: cast_nullable_to_non_nullable
+              as int,
+      rating: null == rating
+          ? _value.rating
+          : rating // ignore: cast_nullable_to_non_nullable
+              as double,
       ingredients: null == ingredients
           ? _value._ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
@@ -133,6 +167,8 @@ class _$RecipeModelImpl implements _RecipeModel {
   const _$RecipeModelImpl(
       {required this.id,
       required this.name,
+      required this.cookTimeMinutes,
+      required this.rating,
       required final List<String> ingredients,
       required this.image})
       : _ingredients = ingredients;
@@ -144,6 +180,10 @@ class _$RecipeModelImpl implements _RecipeModel {
   final int id;
   @override
   final String name;
+  @override
+  final int cookTimeMinutes;
+  @override
+  final double rating;
   final List<String> _ingredients;
   @override
   List<String> get ingredients {
@@ -157,7 +197,7 @@ class _$RecipeModelImpl implements _RecipeModel {
 
   @override
   String toString() {
-    return 'RecipeModel(id: $id, name: $name, ingredients: $ingredients, image: $image)';
+    return 'RecipeModel(id: $id, name: $name, cookTimeMinutes: $cookTimeMinutes, rating: $rating, ingredients: $ingredients, image: $image)';
   }
 
   @override
@@ -167,6 +207,9 @@ class _$RecipeModelImpl implements _RecipeModel {
             other is _$RecipeModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.cookTimeMinutes, cookTimeMinutes) ||
+                other.cookTimeMinutes == cookTimeMinutes) &&
+            (identical(other.rating, rating) || other.rating == rating) &&
             const DeepCollectionEquality()
                 .equals(other._ingredients, _ingredients) &&
             (identical(other.image, image) || other.image == image));
@@ -174,8 +217,8 @@ class _$RecipeModelImpl implements _RecipeModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name,
-      const DeepCollectionEquality().hash(_ingredients), image);
+  int get hashCode => Object.hash(runtimeType, id, name, cookTimeMinutes,
+      rating, const DeepCollectionEquality().hash(_ingredients), image);
 
   @JsonKey(ignore: true)
   @override
@@ -195,6 +238,8 @@ abstract class _RecipeModel implements RecipeModel {
   const factory _RecipeModel(
       {required final int id,
       required final String name,
+      required final int cookTimeMinutes,
+      required final double rating,
       required final List<String> ingredients,
       required final String image}) = _$RecipeModelImpl;
 
@@ -205,6 +250,10 @@ abstract class _RecipeModel implements RecipeModel {
   int get id;
   @override
   String get name;
+  @override
+  int get cookTimeMinutes;
+  @override
+  double get rating;
   @override
   List<String> get ingredients;
   @override

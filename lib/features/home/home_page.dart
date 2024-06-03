@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:recipes_app/app/core/utils/injection_container.dart';
 import 'package:recipes_app/data/datasources/recipe_datasources.dart';
 import 'package:recipes_app/domain/models/recipe_model.dart';
+import 'package:recipes_app/features/home/widgets/recipe_card.dart';
 import 'package:recipes_app/features/recipe_details/recipe_details_page.dart';
 import 'package:recipes_app/generated/l10n.dart';
 
@@ -46,44 +47,44 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          S.of(context).recipes,
-        ),
-      ),
-      body: Column(
-        children: [
-          _isLoading
-              ? const Center(
-                  child: CircularProgressIndicator(),
+      body: _isLoading
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : _recipes.isNotEmpty
+              ? ListView.builder(
+                  itemCount: _recipes.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => RecipeDetailsPage(recipe: _recipes[index]),
+                              ),
+                            );
+                          },
+                          child: RecipeCard(
+                            title: _recipes[index].name,
+                            rating: _recipes[index].rating.toString(),
+                            cookTime: _recipes[index].cookTimeMinutes.toString(),
+                            thumbnailUrl: _recipes[index].image,
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 )
-              : _recipes.isNotEmpty
-                  ? Expanded(
-                      child: ListView.builder(
-                        itemCount: _recipes.length,
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            leading: Image.network(_recipes[index].image),
-                            title: Text(_recipes[index].name),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => RecipeDetailsPage(recipe: _recipes[index]),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                      ),
-                    )
-                  : Center(
-                      child: Text(
-                        S.of(context).no_recipes,
-                      ),
-                    ),
-        ],
-      ),
+              : Center(
+                  child: Text(
+                    S.of(context).no_recipes,
+                  ),
+                ),
     );
   }
 }

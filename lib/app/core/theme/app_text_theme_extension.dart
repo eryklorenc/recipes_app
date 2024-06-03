@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes_app/app/core/theme/app_colors.dart';
 
 extension XTheme on ThemeData {
   AppTextThemeExtension get xTextTheme => extension<AppTextThemeExtension>()!;
@@ -22,12 +23,11 @@ class AppTextThemeExtension extends ThemeExtension<AppTextThemeExtension> {
 
   factory AppTextThemeExtension.initialize() => AppTextThemeExtension(
         display0: const TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w500,
+          color: AppColors.white,
         ),
         display1: const TextStyle(
-          fontSize: 23,
-          fontWeight: FontWeight.w500,
+          fontSize: 19,
+          color: AppColors.white,
         ),
         body1: const TextStyle(
           fontSize: 12,

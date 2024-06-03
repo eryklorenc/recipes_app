@@ -8,6 +8,8 @@ class RecipeModel with _$RecipeModel {
   const factory RecipeModel({
     required int id,
     required String name,
+    required int cookTimeMinutes,
+    required double rating,
     required List<String> ingredients,
     required String image,
   }) = _RecipeModel;

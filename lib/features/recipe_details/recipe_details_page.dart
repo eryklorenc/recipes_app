@@ -13,18 +13,20 @@ class RecipeDetailsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(recipe.name),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.network(recipe.image),
-            const SizedBox(height: 16.0),
-            Text(S.of(context).ingredients, style: Theme.of(context).textTheme.titleLarge),
-            ...recipe.ingredients.map(
-              (ingredient) => Text(ingredient),
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.network(recipe.image),
+              const SizedBox(height: 16.0),
+              Text(S.of(context).ingredients, style: Theme.of(context).textTheme.titleLarge),
+              ...recipe.ingredients.map(
+                (ingredient) => Text(ingredient),
+              ),
+            ],
+          ),
         ),
       ),
     );
