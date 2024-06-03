@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipes_app/app/core/theme/app_colors.dart';
-import 'package:recipes_app/main.dart';
-
-void main() {
-  runApp(const MyApp());
-}
+import 'package:recipes_app/features/home/home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,7 +13,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const HomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
