@@ -1,4 +1,6 @@
 {
     "@@locale": "en",
-    "start": "Start"
+    "recipes": "Recipes",
+    "ingredients": "Ingredients",
+    "no_recipes": "No recipes loaded"
 }

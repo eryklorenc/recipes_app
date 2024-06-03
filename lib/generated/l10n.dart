@@ -47,11 +47,31 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Start`
-  String get start {
+  /// `Recipes`
+  String get recipes {
     return Intl.message(
-      'Start',
-      name: 'start',
+      'Recipes',
+      name: 'recipes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ingredients`
+  String get ingredients {
+    return Intl.message(
+      'Ingredients',
+      name: 'ingredients',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No recipes loaded`
+  String get no_recipes {
+    return Intl.message(
+      'No recipes loaded',
+      name: 'no_recipes',
       desc: '',
       args: [],
     );
