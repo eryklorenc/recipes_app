@@ -3,7 +3,7 @@ import 'package:recipes_app/app/core/utils/injection_container.dart';
 import 'package:recipes_app/data/datasources/recipe_datasources.dart';
 import 'package:recipes_app/domain/models/recipe_model.dart';
 import 'package:recipes_app/features/home/widgets/recipe_card.dart';
-import 'package:recipes_app/features/recipe_details/recipe_details_page.dart';
+import 'package:recipes_app/features/recipe_details/ui/recipe_details_page.dart';
 import 'package:recipes_app/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
