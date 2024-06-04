@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:recipes_app/app/core/utils/injection_container.dart';
 import 'package:recipes_app/features/home/cubit/home_cubit.dart';
 import 'package:recipes_app/features/home/widgets/recipe_card.dart';
 import 'package:recipes_app/features/recipe_details/ui/recipe_details_page.dart';
@@ -11,7 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit()..loadRecipes(),
+      create: (context) => getIt<HomeCubit>()..loadRecipes(),
       child: Scaffold(
         appBar: AppBar(
           title: Text(S.of(context).recipes),
