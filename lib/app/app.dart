@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.white),
         useMaterial3: true,
         extensions: [
           AppTextThemeExtension.initialize(),

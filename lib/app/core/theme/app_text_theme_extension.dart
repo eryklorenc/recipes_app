@@ -29,10 +29,7 @@ class AppTextThemeExtension extends ThemeExtension<AppTextThemeExtension> {
           fontSize: 19,
           color: AppColors.white,
         ),
-        body1: const TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w300,
-        ),
+        body1: const TextStyle(fontSize: 16),
         body2: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 20,

@@ -2,5 +2,8 @@
     "@@locale": "en",
     "recipes": "Recipes",
     "ingredients": "Ingredients",
-    "no_recipes": "No recipes loaded"
+    "no_recipes": "No recipes loaded",
+    "instructions": "Instructions",
+    "Ingredients0" : "- {ingredient}",
+    "ingredient_item": "{number}. {ingredient}"
 }

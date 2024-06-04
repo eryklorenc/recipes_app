@@ -76,6 +76,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Instructions`
+  String get instructions {
+    return Intl.message(
+      'Instructions',
+      name: 'instructions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `- {ingredient}`
+  String Ingredients0(Object ingredient) {
+    return Intl.message(
+      '- $ingredient',
+      name: 'Ingredients0',
+      desc: '',
+      args: [ingredient],
+    );
+  }
+
+  /// `{number}. {ingredient}`
+  String ingredient_item(Object number, Object ingredient) {
+    return Intl.message(
+      '$number. $ingredient',
+      name: 'ingredient_item',
+      desc: '',
+      args: [number, ingredient],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
